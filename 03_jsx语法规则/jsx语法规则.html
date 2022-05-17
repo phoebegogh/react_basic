@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jsx语法规则</title>
+  <style>
+    .title{
+      background-color: blueviolet;
+      width: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div id="test"></div>
+  <script type="text/javascript" src="../js/react.development.js"></script>
+  <script type="text/javascript" src="../js/react-dom.development.js"></script>
+  <script type="text/javascript" src="../js/babel.min.js"></script>
+
+  <script type="text/babel">
+      const myId = 'aTgUiGu'
+      const myData1 = 'This is ishop'
+      const myData2 = 'Welcome to a new shopping experience!'
+
+      const VDOM = (
+        <div>
+          <h2 className="title" id={myId.toLowerCase()}>
+            <span style={{color:'black', fontSize:'50px'}}>{myData1.toLowerCase()}</span>
+          </h2>
+          <h2 className="title" id={myId.toLowerCase()}>
+            <span style={{color:'black', fontSize:'50px'}}>{myData2.toLowerCase()}</span>
+          </h2>
+          <input type="text"/>
+          <good>search</good>
+        </div>
+    )
+
+    ReactDOM.render(VDOM,document.getElementById('test'))
+
+  </script>
+ </body>
+</html>

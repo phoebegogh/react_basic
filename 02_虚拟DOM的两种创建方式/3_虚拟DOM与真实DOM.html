@@ -2,17 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome to a new shopping experience</title>
+  <title>3_虚拟DOM与真实DOM</title>
 </head>
 <body>
   <div id="test"></div>
+  <div id="demo"></div>
   <script type="text/javascript" src="../js/react.development.js"></script>
   <script type="text/javascript" src="../js/react-dom.development.js"></script>
   <script type="text/javascript" src="../js/babel.min.js"></script>
 
   <script type="text/babel">
-    const VDOM = <h1>Welcome to a new shopping experience!</h1>
+    const VDOM = 
+    <h1 id="title">
+      <span>Welcome to a new shopping experience!</span>
+    </h1>
     ReactDOM.render(VDOM,document.getElementById('test'))
+
+    const TDOM = document.getElementById('demo')
+    console.log('虚拟DOM',);
+    console.log('真实DOM',);
+    debugger;
+    // console.log(typeof VDOM);
+    // console.log(VDOM instanceof Object);
   </script>
  </body>
 </html>
