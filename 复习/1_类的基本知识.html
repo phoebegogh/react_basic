@@ -28,18 +28,32 @@
       }
     }
 
+    class Car {
+      constructor(name,price){
+        this.name = name
+        this.price = price
+        // this.wheel = 4
+      }
+      Car_Print_log(){
+        console.log(`车的名字为${this.name},车的价格为${this.price}, 车的轮子数量为${this.wheel}`)
+      }
+    }
+
     const p1 = new Person('tom',18)
     const p2 = new Person('jerry',19)
     const s1 = new Student('小张',15,'高一')
-
+    const c1 = new Car('奔驰c63',299)
+    
     console.log(p1);
     console.log(p2);
     console.log(s1);
+    console.log(c1);
 
     p1.speak()
     p2.speak()
     s1.speak()
     s1.study()
+    c1.Car_Print_log();
   </script>
- </body>
+</body>
 </html>

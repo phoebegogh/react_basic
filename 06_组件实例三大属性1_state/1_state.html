@@ -11,14 +11,22 @@
   <script type="text/javascript" src="../js/babel.min.js"></script>
 
   <script type="text/babel">
+
     class Weather extends React.Component{
       constructor(props){
         super(props)
-        this.state = {isHot:true}
+
+        this.state = {isHot:false,wind:'微风'}
+        this.changeWeather = this.changeWeather.bind(this)
       }
       render(){
-        const {isHot} = this.state
-        return <h1 onClick={changeWeather}>今天天气很{this.state.isHot ? '炎热' : '凉爽'}</h1>
+        const {isHot,wind} = this.state
+        return <h1 onClick={this.changeWeather}>今天天气很{this.state.isHot ? '炎热' : '凉爽'},{wind}</h1>
+      }
+      changeWeather(){
+        const isHot = this.state.isHot
+        this.setState({isHot:!isHot})
+        
       }
     }
 
@@ -33,9 +41,9 @@
     // title.onclick = ()=>{
     //   console.log('标题被点击了');
     // }
-    function changeWeather(){
-      console.log('此处修改isHot的值')
-    }
+    // function changeWeather(){
+    //   console.log('此处修改isHot的值')
+    // }
   </script>
 </body>
 </html>
