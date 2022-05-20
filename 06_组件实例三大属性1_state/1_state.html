@@ -16,12 +16,12 @@
       constructor(props){
         super(props)
 
-        this.state = {isHot:false,wind:'微风'}
+        this.state = {isHot:false,wind:''}
         this.changeWeather = this.changeWeather.bind(this)
       }
       render(){
         const {isHot,wind} = this.state
-        return <h1 onClick={this.changeWeather}>今天天气很{this.state.isHot ? '炎热' : '凉爽'},{wind}</h1>
+        return <h1 onClick={this.changeWeather}>你{this.state.isHot ? '点一下文字' : '二臂'},{wind}</h1>
       }
       changeWeather(){
         const isHot = this.state.isHot
