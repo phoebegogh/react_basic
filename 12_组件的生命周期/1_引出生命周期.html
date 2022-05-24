@@ -15,25 +15,29 @@
       state = {opacity:1}
 
       death = ()=>{
+        
         ReactDOM.unmountComponentAtNode(document.getElementById('test'))
       }
 
-      action = ()=>{
-        setInterval(() => {
-          let {opacity} = this.state
-          opacity -= 0.1
-          if(opacity <= 0) opacity=1
+      componentDidMount(){
+        this.timer = setInterval(() =>{
+          let{opacity} = this.state
+          opacity -=0.1
+          if(opacity <= 0) opacity = 1
           this.setState({opacity})
         }, 200);
       }
 
+      componentWillUnmount(){
+        clearInterval(this.timer)
+      }
+
       render(){
-        console.log('render');
+        console.log('render')
         return(
           <div>
             <h2 style={{opacity:this.state.opacity}}>男朋友不听我的怎么办？</h2>
             <button onClick={this.death}>拳头</button>
-            <button onClick={this.action}>开始打拳</button>
             </div>
         )
       }
